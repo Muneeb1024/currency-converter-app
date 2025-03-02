@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
@@ -30,6 +32,7 @@ with col2:
     to_currencies = st.multiselect("Convert To", currencies, default=["EUR", "GBP", "INR"])
 
 amount = st.number_input("Enter Amount", min_value=0.01, format="%.2f")
+
 
 # Convert button
 if st.button("Convert"):
